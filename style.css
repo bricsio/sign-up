@@ -62,7 +62,7 @@ h1 {
     flex-direction: column;
 }
 
-#right-container div:nth-child(1) {
+#right-container>div:nth-child(1) {
     flex: 1;
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -76,14 +76,55 @@ h1 {
     font-weight: 500;
 }
 
-#right-container div:nth-child(2) {
-    flex: 1;
+#right-container>div:nth-child(2) {
+    flex: 0.4;
     background-color: #f1f1f1;
     padding: 20px;
     box-shadow: 0 5px 5px rgb(189, 189, 189);
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#right-container div:nth-child(3) {
+fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+legend {
+    padding-bottom: 20px;
+}
+
+fieldset>div {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-size: 1rem;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid #E5E7EB;
+    height: 1.5rem;
+    padding: 5px 10px;
+}
+
+input:focus {
+    outline: green solid 1px;
+    box-shadow: 0 5px 5px rgb(189, 189, 189);
+}
+
+input:user-invalid {
+    outline: orange solid 2px;
+}
+
+#right-container>div:nth-child(3) {
     flex: 1;
     background-color: var(--bg-primary);
     margin-top: 5px;
@@ -93,4 +134,36 @@ h1 {
     gap: 20px;
 }
 
+button {
+    display: inline-block;
+    background-color: #596D48;
+    width: fit-content;
+    border: none;
+    border-radius: 10px;
+    color: var(--bg-primary);
+    font-size: 1.5rem;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: transform .2s;
+}
 
+button:hover {
+    color: var(--bg-secondary);
+}
+
+button:active {
+    transform: scale(1.1);
+    box-shadow: 0 5px 5px rgb(189, 189, 189);
+}
+
+a[href="#"] {
+    color: var(--bg-secondary);
+    text-decoration: none;
+}
+
+.error {
+    display: none;
+    padding-top: 10px;
+    color: red;
+    font-size: 0.9rem;
+}
